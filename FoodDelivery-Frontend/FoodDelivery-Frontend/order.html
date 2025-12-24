@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crave Corner - Order</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--Header Section-->
+<header>
+    <h1>CraveCorner</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="cart.html">Cart</a>
+ <!-- Logout button -->
+        <button onclick="logout()">Logout</button>
+    </nav>
+</header>
+<!--Main Content-->
+<main>
+    <h2>Order Summary</h2>
+    <p>Thank you for placing your order! Your delicious food is on its way. 🍔🍕🍝🍛🍰</p>
+    <button onclick="placeOrder()">Confirm Order</button>
+</main>
+<!--Scripts-->
+<script>
+
+if(localStorage.getItem('isLoggedIn') !== 'true'){
+    window.location.href = "login.html";
+}
+// Function to place the order
+function placeOrder(){
+
+    const user = localStorage.getItem("currentUser");
+    const cart = JSON.parse(localStorage.getItem(`cart_${user}`)) || [];
+
+    if(cart.length === 0){
+        alert("Cart is empty!");
+        return;
+    }
+ // Calculate total price
+    const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+
+    fetch("http://localhost:3000/place-order", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            user: user,
+            items: cart,
+            total: total
+        })
+    })
+// Convert response to JSON
+    .then(res => res.json())
+    .then(data => {
+        if(data.success){
+            alert("Order placed successfully!");
+            localStorage.removeItem(`cart_${user}`); // Clear cart
+            window.location.href = "home.html";// redirect to home
+        } else {
+            alert("Order failed"); // Backend returned failure
+        }
+    })
+    .catch(err => {
+        console.error(err); // Network or fetch errors
+        alert("Order failed");
+    });
+}
+// Function to logout user
+function logout(){
+    localStorage.removeItem("isLoggedIn"); // Remove login flag
+    localStorage.removeItem("currentUser");
+    window.location.href = "login.html"; // Redirect to login page
+}
+</script>
+
+</body>
+</html>

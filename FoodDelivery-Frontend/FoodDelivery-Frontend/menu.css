@@ -1,0 +1,19 @@
+/* Light background with a diagonal gradient from green to blue */
+.light-bg {
+  background: linear-gradient(135deg,#e8f5e9,#e3f2fd);
+}
+/* Menu card style rounded corners, green border, smooth transition */
+.menu-card {
+  border-radius: 18px;
+  border: 2px solid #c8e6c9;
+  transition: 0.3s;
+}
+/* Hover effect lifts the card slightly when mouse is over */
+.menu-card:hover {
+  transform: translateY(-6px);
+}
+/* Menu card images styling */
+.menu-card img {
+  height: 160px;
+  object-fit: cover;
+}

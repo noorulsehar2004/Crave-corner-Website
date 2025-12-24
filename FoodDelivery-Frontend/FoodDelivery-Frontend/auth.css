@@ -1,0 +1,58 @@
+/*global light theme*/
+body.light-bg {
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/*Auth Card*/
+.auth-card-light {
+    border-radius: 18px;
+    border: 2px solid #b2dfdb;
+    background: #ffffff;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+
+/*brand*/
+.brand {
+    color: #00796b;
+    font-weight: 700;
+}
+
+/*inputs*/
+.form-control {
+    border-radius: 12px;
+    border: 2px solid #cfd8dc;
+    padding: 10px;
+}
+
+.form-control:focus {
+    border-color: #4db6ac;
+    box-shadow: 0 0 0 0.15rem rgba(77,182,172,.25);
+}
+
+/*buttons*/
+.btn-warning {
+    background: linear-gradient(135deg, #ff7043, #ff8a65);
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    font-weight: 600;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #f4511e, #ff7043);
+}
+
+/*Links*/
+a {
+    text-decoration: none;
+}
+
+a.text-warning {
+    color: #00796b !important;
+}
+
+a.text-warning:hover {
+    text-decoration: underline;
+}

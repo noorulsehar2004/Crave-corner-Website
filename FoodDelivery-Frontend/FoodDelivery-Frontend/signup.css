@@ -1,0 +1,67 @@
+/* Body and general styling */
+body{
+    background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+    font-family: 'Segoe UI', sans-serif;
+}
+/* Wrapper to center signup form */
+.signup-wrapper{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Signup card styling */
+.signup-card{
+    background: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    padding: 35px;
+    border-radius: 18px;
+    border: 2px solid #b2dfdb;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
+}
+/* Brand Name */
+.brand{
+    color: #00796b;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.subtitle{
+    color: #607d8b;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+/* Form input styling */
+.form-control{
+    border-radius: 12px;
+    border: 2px solid #cfd8dc;
+}
+
+.form-control:focus{
+    border-color: #4db6ac;
+    box-shadow: 0 0 0 0.15rem rgba(77,182,172,.25);
+}
+/* Main button styling */
+.btn-main{
+    background: linear-gradient(135deg, #ff7043, #ff8a65);
+    color: white;
+    border-radius: 12px;
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+}
+/* Button hover effect */
+.btn-main:hover{
+    background: linear-gradient(135deg, #f4511e, #ff7043);
+}
+/* Links styling */
+a{
+    color: #00796b;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}

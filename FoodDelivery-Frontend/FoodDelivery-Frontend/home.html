@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CraveCorner | Home</title>
+
+<!--Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!--Custom CSS-->
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body class="light-bg">
+
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold text-success" href="home.html">CraveCorner</a>
+        <div class="ms-auto">
+            <button class="btn btn-outline-danger btn-sm" onclick="logout()">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<!--Hero-->
+<section class="hero text-center py-5">
+    <h1 class="fw-bold">Choose Your Favorite Restaurant</h1>
+    <p class="text-muted">Fresh food from top restaurants 🍔🍕🍝</p>
+</section>
+
+<!--Restaurants-->
+<div class="container pb-5">
+    <div class="row g-4">
+
+<!--Restaurant 1-->
+        <div class="col-md-3">
+            <div class="card restaurant-card h-100">
+                <img src="restaurants/restaurent1.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Italiano Hub</h5>
+                    <p class="text-muted">Pasta • Pizza </p>
+                    <a href="menu.html?res=italian" class="btn btn-success w-100">View Menu</a>
+                </div>
+            </div>
+        </div>
+<!--Restaurant 2-->
+        <div class="col-md-3">
+            <div class="card restaurant-card h-100">
+                <img src="restaurants/restaurant2.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Desi Tarka</h5>
+                    <p class="text-muted">Biryani • Karahi • BBQ</p>
+                    <a href="menu.html?res=desi" class="btn btn-success w-100">View Menu</a>
+                </div>
+            </div>
+        </div>
+<!-- Restaurant 3 -->
+        <div class="col-md-3">
+            <div class="card restaurant-card h-100">
+                <img src="restaurants/restaurant3.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Burger Express</h5>
+                    <p class="text-muted">Burgers • Fries • Wraps</p>
+                    <a href="menu.html?res=burger" class="btn btn-success w-100">View Menu</a>
+                </div>
+            </div>
+        </div>
+
+<!-- Restaurant 4 -->
+        <div class="col-md-3">
+            <div class="card restaurant-card h-100">
+                <img src="restaurants/restaurant4.jpg" class="card-img-top">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Sweet Tooth</h5>
+                    <p class="text-muted">Cakes • Brownies • Ice Cream</p>
+                    <a href="menu.html?res=sweet" class="btn btn-success w-100">View Menu</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+if(localStorage.getItem("isLoggedIn") !== "true"){
+    window.location.href = "login.html";
+}
+
+function logout(){
+    localStorage.clear();
+    window.location.href = "login.html";
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
